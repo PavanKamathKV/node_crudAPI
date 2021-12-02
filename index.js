@@ -1,14 +1,13 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 require('dotenv').config()
 
 const app = express();
 
 const port = process.env.PORT || 8080;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Testing Node");
